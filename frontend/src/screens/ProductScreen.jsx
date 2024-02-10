@@ -10,11 +10,11 @@ const ProductScreen = () => {
   const [product, setProduct] = useState({});
   useEffect(() => {
     const fetchProduct = async () => {
-      const { data } = await axios.get(`/api/product/${productId}`);
+      const { data } = await axios.get(`/api/products/${productId}`);
       setProduct(data);
     };
     fetchProduct();
-  }, []);
+  }, [productId]);
   return (
     <>
       <Link className="btn btn-light my-3" to="/">
